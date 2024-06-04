@@ -1,0 +1,191 @@
+/* Style for the first page */
+@page :first {
+    /* Center the content vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Set page size and orientation */
+    size: A4 portrait;
+    counter-reset: page 0;
+
+    /* Reset page counter to start from 0 */
+    @bottom-left {
+        content: none;
+        /* Hide footer on the first page */
+    }
+
+    @bottom-right {
+        content: none;
+        /* Hide footer on the first page */
+    }
+}
+
+/* Style for the TOC, will need to add more if multiple TOC pages */
+@page :nth(2) {
+    counter-reset: page 0;
+
+    /* Reset page counter to start from 0 */
+    @bottom-left {
+        content: none;
+        /* Hide footer on the second page */
+    }
+
+    @bottom-right {
+        content: none;
+        /* Hide footer on the second page */
+    }
+}
+
+@page {
+    margin: 20mm;
+
+    @bottom-right {
+        content: "Page "counter(page);
+        /* Use counter to insert page number */
+        font-size: 10pt;
+        /* Set font size */
+        font-family: sans-serif;
+    }
+
+    /* Define content for the bottom center */
+    @bottom-left {
+        content: "ReqTrackManager - Project Specifications";
+        font-size: 10pt;
+        font-family: sans-serif;
+    }
+}
+
+
+
+.firstpage {
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 400px;
+    /* Add 50px of space above the element */
+
+}
+
+body {
+    font-size: 10pt;
+    font-family: sans-serif;
+}
+
+p {
+    text-align: justify;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
+
+td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+td:nth-child(2) {
+    text-align: left;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 12pt;
+    margin-top: 10pt;
+    /* Add space above section title */
+    display: block;
+    /* Ensure always on own line */
+}
+
+h1 {
+    /* We use :not(:first-of-type) so not to affect first page */
+    page-break-before: always;
+    font-size: 16pt;
+}
+
+.toc {
+    /* We use :not(:first-of-type) so not to affect first page */
+    page-break-before: always;
+}
+
+/* Justify text in unordered and ordered lists */
+ul,
+ol {
+    text-align: justify;
+    margin-bottom: 5px;
+    padding-left: 10px; /* Adjust left margin as needed */
+}
+
+/* Additionally, ensure list items themselves are justified */
+ul li,
+ol li {
+    text-align: justify;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 20px; /* Adjust left margin as needed */
+    /* Add space between each list item */
+}
+
+/* Target lists that are indented twice (i.e., nested within two levels) */
+ul ul ul,
+ol ol ol,
+ul ol ul,
+ol ul ol {
+    text-align: justify;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 30px; /* Adjust left margin as needed */
+}
+
+ul ul ul li,
+ol ol ol li,
+ul ol ul li,
+ol ul ol li {
+    text-align: justify;
+    margin-bottom: 5px; /* Adjust bottom margin as needed */
+    margin-top: 5px;
+    padding-left: 40px; /* Adjust left margin as needed */
+}
+
+/* URL Colouring */
+a {
+    color: black;
+    /* Set the text color to black */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+a:visited {
+    color: black;
+    /* Ensure visited links are also black */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+a:hover {
+    color: black;
+    /* Ensure hovered links are also black */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+a:active {
+    color: black;
+    /* Ensure active links are also black */
+    text-decoration: none;
+    /* Remove underline */
+}
