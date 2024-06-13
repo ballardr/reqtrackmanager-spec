@@ -1,0 +1,127 @@
+---
+title: ReqTrackManager
+subtitle: Implementation Plan
+title-block-style: none
+title-block-banner: false
+format: 
+  pdf:
+    pdf-engine: weasyprint
+    html-table-processing: none
+    number-sections: false
+    toc: true
+    toc_depth: 3
+    toc_header: Contents
+    template: templates/template.html
+    css: style.css
+  html:
+    css: style.css
+    toc: true
+    toc_depth: 3
+    toc_header: Contents
+---
+
+
+
+# Introduction
+
+
+ReqTrackManager is aiming to fill the market gap for teams (predominatly product development teams) that need a formal engineering requirements management system, but cannot afford propietory systems, and find other requirements software "not quite right" (generally because it's designed for continuous improvement/agile software teams).
+
+ReqTrackManager aims to have the following features (details in below specifications):
+
+ * Primarily OpenSource
+ * Server hosted
+
+## functionality
+
+Change request - rationales
+
+
+
+## Background
+
+Hardware teams that I have been apart of, have lacked proper engineering requirement systems and formal change request processes.
+
+The main reason for this is cost. IBM DOORS \cite{ibmdoors} is arguably the industry standard for this type of software, but it comes with a heafty cost. Small to medium size teams simply can't afford it, and so either try alternatives (such as Jira Requirements), manual process or go without.
+
+However due to the complexity of tracking requirements, most alternatives simply don't have all the features required by hardware teams (they are developed for agile software). Manual processes seemingly end up in the too hard basket and as such teams generally revert back to a static document which doesn't change throughout the project and only gets revised at the end (generally changing the requirements to match what was made).
+
+As such, I wanted to develop my own system that I could work on in my spare time, using industry best practices and looking like a modern software package (IBM DOORS looks like it's from the 90s).
+
+
+# Project Structure
+ReqTrackManager is split into two core components. The backend service of the project handles server-side logic, database interactions, and API management, while the frontend UI is the client-side interface where users interact with the application visually and perform tasks. As these two components are very distinct in their operation and development paths, they are seperated out (both in terms of specifications but also development).
+
+![](../figures/architecture/project_structure.svg){.centered-image width=70%}
+
+The interface between the two components will be clearly defined in an OpenAPI specification. This and any other specifications related to multiple components will be seperated into a Cross component specification section.
+
+The database is shown seperately in the the project structure as it will be a seperate service run outside of the backend. Database interaction specifications will be defined in the backend specifications.
+
+
+# Frontend (User Interface) Interface
+
+
+UI Views
+- Login Page
+- View Projects (as tiles)
+- Project Overview page
+    include:
+    - view project components tree
+    - Number of requirements
+    - Percentage Completed
+    - Number of files
+    - Number of Change Requests (proposed, approved, rejected)
+- View Requirements (multiple) - must be split into components
+- View Requirement (Singular) - All details, include history
+- Edit Requirement (mostly same as view, but with save button, and modification summary)
+- Submit Change Request
+- View (Edit) Change Request
+    - Depending on status of change request, this view will have discussion attached, and approval buttons will also show
+- Edit Project
+    - Name
+    - Component Prefixes
+    - Project Groups (name + description, note if built in or not)
+    - Users (table -> email, Project Delegations/Groups (auth groups; "advanced" if has special acls), last view of project)
+    - Ability to add users directly to groups
+    - Allow project to act as template
+- Project Report Setup
+    - Project Intro
+    - Body Chapters
+    - Appendices
+- New Project
+  - Same as edit, but include "copy template project"
+- Edit Project Stages/Versions
+  - Table of Stage name, description, status (scoping, in review, Ready for use, Implemented, Archieved)
+- Edit Project Groups (multiple)
+- Edit Project group (specific)
+- Edit Project Files (ie uploads)
+- Import/Export Project
+- Edit Organisation
+    - Edit users (unless managed via SSO)
+    - Org Name
+- Edit Organisation Advanced
+    - Edit mapping of SSO groups and ReqTrackManager groups
+    - Edit SMTP settings
+    - SSO Connection Settings
+- Edit Oranisation Groups (multiple)
+- Edit Organisation Group (singular)
+- Edit Organisation Shared Files (ie uploads)
+- Edit User (org level)
+    - User Name
+    - Organsiation Groups (table - org group name, group)
+    - Project Groups (table - project group name, group)
+- Import/Export Organisation
+- Server Administrator
+    - Add/Remove Organisations (Table of org name, edit and remove, plus button to add new)
+    - (Can link to edit organisations, including advanced settings)
+- User Preferenes
+    - Avatar/User Image
+    - Email
+    - Full Name
+    - Timezone
+    - Theme
+    - Language
+    - Page on login (direct to project, overview, or automatic)
+    - Notification Settings
+

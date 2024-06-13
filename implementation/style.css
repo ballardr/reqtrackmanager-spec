@@ -9,15 +9,12 @@
     size: A4 portrait;
     counter-reset: page 0;
 
-    /* Reset page counter to start from 0 */
+    /* Hide the footer on the first page */
     @bottom-left {
         content: none;
-        /* Hide footer on the first page */
     }
-
     @bottom-right {
         content: none;
-        /* Hide footer on the first page */
     }
 }
 
@@ -25,15 +22,12 @@
 @page :nth(2) {
     counter-reset: page 0;
 
-    /* Reset page counter to start from 0 */
+    /* Hide the footer on the first page */
     @bottom-left {
         content: none;
-        /* Hide footer on the second page */
     }
-
     @bottom-right {
         content: none;
-        /* Hide footer on the second page */
     }
 }
 
@@ -44,44 +38,54 @@
         content: "Page "counter(page);
         /* Use counter to insert page number */
         font-size: 10pt;
-        /* Set font size */
         font-family: sans-serif;
     }
 
     /* Define content for the bottom center */
     @bottom-left {
-        content: "ReqTrackManager - Project Specifications";
+        content: "ReqTrackManager - Implementation Plan";
         font-size: 10pt;
         font-family: sans-serif;
     }
 }
 
 
-
+/* First Page text formatting (vertical and horizontal centre text) */
 .firstpage {
-
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-top: 400px;
-    /* Add 50px of space above the element */
-
 }
 
+/* Set document defaults*/
 body {
     font-size: 10pt;
     font-family: sans-serif;
 }
 
+/* Standard paragraph defaults */
 p {
     text-align: justify;
+    line-height: 1.4em;
 }
 
+/* Images */
+/**********/
+.centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Table Settings*/
+/*****************/
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
+/* Table Header Row */
 th {
     background-color: black;
     color: white;
@@ -89,58 +93,82 @@ th {
     padding: 8px;
 }
 
+/* Table Cells */
 td {
     text-align: center;
+    line-height: 1.4em;
     padding: 8px;
     border: 1px solid #ddd;
+    width: 1%;
 }
 
+/* Add a liitle extra space on <br> */
+td br {
+    display: block; /* Ensure <br> creates a new line */
+    margin-bottom: -0.5em; /* Reduce space after <br> */
+}
+
+/* 1st Col of Table col */
+th:first-child, td:first-child {
+    width: 50px;
+}
+/* 2nd Col of Table col */
 td:nth-child(2) {
+    line-height: 1.4em;
     text-align: left;
+    /* text-align: justify; */
+    width: 100%;
 }
 
-h2,
+/* Header 1 */
+h1 {
+    page-break-before: always;
+    font-size: 16pt;
+}
+
+/* Other Headers */
+h2 {
+    font-size: 12pt;
+    margin-top: 20pt;
+    display: block;
+}
+
+/* Other Headers */
+
 h3,
 h4,
 h5,
 h6 {
     font-size: 12pt;
     margin-top: 10pt;
-    /* Add space above section title */
     display: block;
-    /* Ensure always on own line */
 }
 
-h1 {
-    /* We use :not(:first-of-type) so not to affect first page */
-    page-break-before: always;
-    font-size: 16pt;
-}
-
+/* Table of contents */
 .toc {
-    /* We use :not(:first-of-type) so not to affect first page */
     page-break-before: always;
 }
 
-/* Justify text in unordered and ordered lists */
+/* Lists */
+/*********/
+/* First Level of list */
 ul,
 ol {
     text-align: justify;
     margin-bottom: 5px;
-    padding-left: 10px; /* Adjust left margin as needed */
+    padding-left: 10px;
 }
 
-/* Additionally, ensure list items themselves are justified */
+/* Second Level of list */
 ul li,
 ol li {
     text-align: justify;
     margin-bottom: 5px;
     margin-top: 5px;
-    padding-left: 20px; /* Adjust left margin as needed */
-    /* Add space between each list item */
+    padding-left: 20px;
 }
 
-/* Target lists that are indented twice (i.e., nested within two levels) */
+/* Third Level of list */
 ul ul ul,
 ol ol ol,
 ul ol ul,
@@ -148,44 +176,38 @@ ol ul ol {
     text-align: justify;
     margin-bottom: 5px;
     margin-top: 5px;
-    padding-left: 30px; /* Adjust left margin as needed */
+    padding-left: 30px;
 }
 
+/* Forth Level of list */
 ul ul ul li,
 ol ol ol li,
 ul ol ul li,
 ol ul ol li {
     text-align: justify;
-    margin-bottom: 5px; /* Adjust bottom margin as needed */
+    margin-bottom: 5px; 
     margin-top: 5px;
-    padding-left: 40px; /* Adjust left margin as needed */
+    padding-left: 40px;
 }
 
-/* URL Colouring */
+/* URLs */
+/*********/
 a {
     color: black;
-    /* Set the text color to black */
     text-decoration: none;
-    /* Remove underline */
 }
 
 a:visited {
     color: black;
-    /* Ensure visited links are also black */
     text-decoration: none;
-    /* Remove underline */
 }
 
 a:hover {
     color: black;
-    /* Ensure hovered links are also black */
     text-decoration: none;
-    /* Remove underline */
 }
 
 a:active {
     color: black;
-    /* Ensure active links are also black */
     text-decoration: none;
-    /* Remove underline */
 }

@@ -1,0 +1,20 @@
+{
+    "cSpell.languageSettings": [
+        {
+        "languageId": "markdown",
+        "dictionaries": ["en_GB", "en_US"],
+    }
+    ],
+    "cSpell.enabledLanguageIds": [
+        "markdown",
+        "plaintext",
+        "json",
+        "javascript",
+        "typescript",
+        "python",
+        "html",
+        "css",
+        "yaml",
+        "qmd"
+    ]
+}

@@ -1,0 +1,239 @@
+/* Set Variables that can be used in multiple spots */
+/** Custom variable must start with '--' */
+:root {
+    --std-text-size: 8pt;
+    --footer-text-size: 6pt;
+    --project-name: "ReqTrackManager";
+    --project-url: "https://github.com/ballardr/reqtrackmanager-spec";
+}
+  
+
+/* Style for the first page */
+@page :first {
+    /* Center the content vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Set page size and orientation */
+    size: A4 portrait;
+    counter-reset: page 0;
+
+    /* Hide the footer on the first page */
+    @bottom-left {
+        content: none;
+    }
+    @bottom-center {
+        content: none;
+    }
+    @bottom-right {
+        content: none;
+    }
+}
+
+/* Style for the TOC, will need to add more if multiple TOC pages */
+@page :nth(2) {
+    counter-reset: page 0;
+
+    /* Hide the footer on the first page */
+    @bottom-left {
+        content: none;
+    }
+    @bottom-center {
+        content: none;
+    }
+    @bottom-right {
+        content: none;
+    }
+}
+
+@page {
+    margin: 20mm;
+
+
+    /* Define content for the bottom center */
+    @bottom-left {
+        content: var(--project-name) " - Project Specifications";
+        font-size: var(--footer-text-size);
+        font-family: sans-serif;
+    }
+
+    @bottom-center {
+        content: "Page "counter(page);
+        /* Use counter to insert page number */
+        font-size: var(--footer-text-size);
+        font-family: sans-serif;
+    }
+
+    @bottom-right {
+        content: var(--project-url);
+        /* Use counter to insert page number */
+        font-size: var(--footer-text-size);
+        font-family: sans-serif;
+    }
+}
+
+
+/* First Page text formatting (vertical and horizontal centre text) */
+.firstpage {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 400px;
+}
+
+/* Set document defaults*/
+body {
+    font-size: var(--std-text-size);
+    font-family: sans-serif;
+}
+
+/* Standard paragraph defaults */
+p {
+    text-align: justify;
+    line-height: 1.4em;
+    font-size: var(--std-text-size);
+}
+
+/* Images */
+/**********/
+.centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Table Settings*/
+/*****************/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table Header Row */
+th {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
+
+/* Table Cells */
+td {
+    text-align: center;
+    line-height: 1.4em;
+    padding: 8px;
+    border: 1px solid #ddd;
+    width: 1%;
+    font-size: var(--std-text-size);
+}
+
+/* Add a liitle extra space on <br> */
+td br {
+    display: block; /* Ensure <br> creates a new line */
+    margin-bottom: -0.5em; /* Reduce space after <br> */
+}
+
+/* 1st Col of Table col */
+th:first-child, td:first-child {
+    width: 50px;
+}
+/* 2nd Col of Table col */
+td:nth-child(2) {
+    line-height: 1.4em;
+    text-align: left;
+    /* text-align: justify; */
+    width: 100%;
+}
+
+/* Header 1 */
+h1 {
+    page-break-before: always;
+    font-size: 16pt;
+}
+
+/* Other Headers */
+h2 {
+    font-size: 12pt;
+    margin-top: 20pt;
+    display: block;
+}
+
+/* Other Headers */
+
+h3,
+h4,
+h5,
+h6 {
+    font-size: 12pt;
+    margin-top: 10pt;
+    display: block;
+}
+
+/* Table of contents */
+.toc {
+    page-break-before: always;
+}
+
+/* Lists */
+/*********/
+/* First Level of list */
+ul,
+ol {
+    text-align: justify;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+/* Second Level of list */
+ul li,
+ol li {
+    text-align: justify;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+/* Third Level of list */
+ul ul ul,
+ol ol ol,
+ul ol ul,
+ol ul ol {
+    text-align: justify;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 30px;
+}
+
+/* Forth Level of list */
+ul ul ul li,
+ol ol ol li,
+ul ol ul li,
+ol ul ol li {
+    text-align: justify;
+    margin-bottom: 5px; 
+    margin-top: 5px;
+    padding-left: 40px;
+}
+
+/* URLs */
+/*********/
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+    text-decoration: none;
+}
