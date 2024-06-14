@@ -385,6 +385,40 @@ As such, I wanted to develop my own system that I could work on in my spare time
       <td>Pelion (v2)</td>
     </tr>
 
+    <tr>
+      <td>C-U-16</td>
+      <td>
+          Users with organisational admin role, must have the ability to lock display names of users in their organisation.
+          <br>
+          <b>Reasoning:</b> This ensures consistency and professionalism in user identification across the system. This feature prevents unauthorized or whimsical changes that could lead to confusion, misidentification, or lack of accountability within the organization. By maintaining control over display names, organizational admins can enforce naming conventions and standards, enhancing clarity and communication among users.
+      </td>
+      <td>Recommended</td>
+      <td>Pelion (v2)</td>
+    </tr>
+
+    <tr>
+      <td>C-U-17</td>
+      <td>
+          Users must have email, a display name and a password.
+          <br>
+          <b>Reasoning:</b> This ensures secure and identifiable access to the system, enhancing both security and accountability. The email allows for communication and password recovery, while the display name provides a consistent identity for collaboration and tracking activities within the system.
+      </td>
+      <td>Requirement</td>
+      <td>Ossa (v1)</td>
+    </tr>
+
+    <tr>
+      <td>C-U-18</td>
+      <td>
+          Users may have the ability to set their pronouns and an avatar.
+          <br>
+          <b>Reasoning:</b> This fosters an inclusive and personalized user experience, supporting diverse identities and preferences within the system.
+      </td>
+      <td>Recommended</td>
+      <td>Pelion (v2)</td>
+    </tr>
+
+
   </tbody>
 </table>
 ```
@@ -430,6 +464,28 @@ As such, I wanted to develop my own system that I could work on in my spare time
           Stakeholders should be able to vote on change request approval.
           <br>
           <b>Reasoning:</b> ensure that all invested parties have a say in significant project changes, promoting collaborative decision-making. This process helps balance differing interests and perspectives, leading to more informed and accepted decisions. Allowing stakeholder votes also enhances transparency and accountability in the change management process.
+      </td>
+      <td>Recommended</td>
+      <td>Massif (v3)</td>
+    </tr>
+
+    <tr>
+      <td>C-R-04</td>
+      <td>
+          Tasks should have the ability to have due dates set.
+          <br>
+          <b>Reasoning:</b> This ensures that project timelines are effectively managed and deadlines are met, enhancing overall project scheduling and accountability. By setting due dates, the system provides clear expectations and facilitates timely completion of tasks, contributing to the successful execution of projects.
+      </td>
+      <td>Recommended</td>
+      <td>Massif (v3)</td>
+    </tr>
+
+    <tr>
+      <td>C-R-05</td>
+      <td>
+          Once a project stage has entered review after being scoped, a deadline can be set for stakeholders to provide a resonse review, after which time if they have not provided a response, then it’s assumed they have approved the requirements.
+          <br>
+          <b>Reasoning:</b> This feature establishes clear expectations and accountability, encouraging stakeholders to engage and respond within the specified timeframe. Assuming approval if no response is provided streamlines the review process, reducing bottlenecks and enabling smoother transitions between project stages.
       </td>
       <td>Recommended</td>
       <td>Massif (v3)</td>
@@ -523,7 +579,7 @@ As such, I wanted to develop my own system that I could work on in my spare time
     <tr>
       <td>C-A-07</td>
       <td>
-          Dates, Times and IP address of user log-ins must be logged.
+          Dates, Times, IP address and location of IP address of user log-ins must be logged.
           <br>
           <b>Reasoning:</b> This helps with tracking any potential malicious activity.
       </td>
@@ -533,6 +589,17 @@ As such, I wanted to develop my own system that I could work on in my spare time
 
     <tr>
       <td>C-A-08</td>
+      <td>
+          Dates and Time of when a notification was read must be recorded.
+          <br>
+          <b>Reasoning:</b> This helps with determining if a user has interacted with a requirement, such that it can be determined if they had reviewed it. This helps if there is a disagreement on if a user claims they had not seen a requirement.
+      </td>
+      <td>Requirement</td>
+      <td>Ossa (v1)</td>
+    </tr>
+
+    <tr>
+      <td>C-A-09</td>
       <td>
           The UI must show a change log for requirements and change requests.
           <br>
@@ -545,7 +612,7 @@ As such, I wanted to develop my own system that I could work on in my spare time
     </tr>
 
     <tr>
-      <td>C-A-09</td>
+      <td>C-A-10</td>
       <td>
           The UI should have the ability to see project changes over time.
           <br>
@@ -559,7 +626,7 @@ As such, I wanted to develop my own system that I could work on in my spare time
     </tr>
 
     <tr>
-      <td>C-A-10</td>
+      <td>C-A-11</td>
       <td>
           On creation of a requirement, a project managers should be able to assign the creator of the requirement to another user
           <br>
@@ -570,7 +637,7 @@ As such, I wanted to develop my own system that I could work on in my spare time
     </tr>
 
     <tr>
-      <td>C-A-11</td>
+      <td>C-A-12</td>
       <td>
           On creation of a change request, a project managers should be able to assign the creator of the change request to another user
           <br>
