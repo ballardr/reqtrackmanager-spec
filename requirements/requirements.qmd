@@ -1163,6 +1163,18 @@ As such, I wanted to develop my own system that I could work on in my spare time
       <td>Ossa (v1)</td>
     </tr>
 
+
+    <tr>
+      <td>U-P-06</td>
+      <td>
+          The UI should perform lazy loading of large data sets.
+          <br>
+          <b>Reasoning:</b> By only loading necessary data as needed, the system remains responsive and efficient, improving usability and scalability.
+      </td>
+      <td>Recommended</td>
+      <td>Ossa (v1)</td>
+    </tr>
+
   </tbody>
 </table>
 ```
@@ -1213,6 +1225,18 @@ As such, I wanted to develop my own system that I could work on in my spare time
       <td>Ossa (v1)</td>
     </tr>
 
+
+    <tr>
+      <td>U-U-03</td>
+      <td>
+          Users may have the ability to set favourite projects. Favourite projects should be displayed at the top of list of projects that is displayed to the user.
+          <br>
+          <b>Reasoning:</b> This enhances productivity by providing quick access to frequently used projects, streamlining workflow and reducing navigation time.
+      </td>
+      <td>Requirement</td>
+      <td>Pelion (v2)</td>
+    </tr>
+
   </tbody>
 </table>
 ```
@@ -1235,6 +1259,8 @@ As such, I wanted to develop my own system that I could work on in my spare time
           Search should be able to filter by specific attributes.
           <br>
           <b>Reasoning:</b> This allows users to quickly and precisely locate relevant requirements, improving efficiency and productivity. By providing advanced filtering options, the system enhances user experience and effectiveness in managing and navigating large volumes of  requirements.
+          <br>
+          <b>Clarification:</b> Search should default to name and unique id only.
       </td>
       <td>Recommended</td>
       <td>Ossa (v1)</td>
@@ -1249,6 +1275,41 @@ As such, I wanted to develop my own system that I could work on in my spare time
       </td>
       <td>Recommended</td>
       <td>Murchison (v4)</td>
+    </tr>
+
+    <tr>
+      <td>U-E-03</td>
+      <td>
+          There must be a project list view, which shows active projects across all organisations for which the user has access too. This must show the projects name, the project summary/description, current project stage, last modification datetime and the users permission roles within each project.
+          <br>
+          <b>Reasoning:</b> This functionality enables users to quickly locate active projects and provide a quick overview of it's status.
+      </td>
+      <td>Requirement</td>
+      <td>Ossa (v1)</td>
+    </tr>
+
+
+    <tr>
+      <td>U-E-04</td>
+      <td>
+          In the project list view, there should the ability to list archieved projects across all organisations for which the user has access too
+          <br>
+          <b>Reasoning:</b> This allows users to access historical project data, which can be crucial for reference, audits, and compliance purposes. It ensures that important information from past projects is not lost and can be reviewed when needed. 
+      </td>
+      <td>Requirement</td>
+      <td>Ossa (v1)</td>
+    </tr>
+
+
+    <tr>
+      <td>U-E-05</td>
+      <td>
+          The projects shown in the project list view should have the ability to be filtered.
+          <br>
+          <b>Reasoning:</b> Filtering options enable users to sort projects based on various criteria, such as status, date, or assigned roles, making it easier to manage large numbers of projects.
+      </td>
+      <td>Requirement</td>
+      <td>Pelion (v2)</td>
     </tr>
 
   </tbody>
